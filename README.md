@@ -66,3 +66,48 @@ _www              1681   0.0  0.0  2473860    956   ??  S     7:54pm   0:00.00 /
 _www              1672   0.0  0.0  2483076   1552   ??  S     7:54pm   0:00.01 /usr/sbin/httpd -D FOREGROUND
 root              1663   0.0  0.0  2475908   3904   ??  Ss    7:54pm   0:00.16 /usr/sbin/httpd -D FOREGROUND
 ```
+
+**Changing the root folder**
+
+The default root folder is located in `Library/WebServer/Documents`. By default, before OS X 10.8 was released, there use to be a folder called `Sites` in the user directory. If you have installed a fresh version of OS X 10.8 you will not be having this. So lets create this folder. To do that, do the following (there are two ways to do this):
+
+1. Open your `Terminal`.
+2. Type in `cd ~` - go to user directory - hit return.
+3. Then type in `mkdir Sites` - make directory named `Sites` - hit return key.
+
+**OR**
+
+You could open `Finder` window, from the menu bar `Go > Go to Folder` or use the shortcut ket <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>G</kbd> and type in `User/<your user name>`. This will open your user directory. In that, right click on an empty space and create a new folder. Name the folder as `Sites`.
+
+Now, we should tell the Apache to server the files from the `Sites` folder rather than the default one. To do that, do the following:
+
+1. Open the `Terminal`.
+2. Type in `cd /etc/apache2/users/`. Then type `ls`, this will list out files that are present. If in some case you do find any file do look into it if it matches the following text. But if you fin `Guest.conf` just ignore it, this file is for guest users.
+3. Type in `sudo nano YourUserName.conf` - create a YourUserName.conf file using nano editor - make sure you write in your user name. For me it is `sudo nano akshayrajgollahalli.conf`.
+4. This command will open an editor, type in the following
+  ```
+  <Directory "/Users/YourUserName/Sites/">
+      Options Indexes MultiViews
+      AllowOverride None
+      Order allow,deny
+      Allow from all
+  </Directory>
+  ```
+  For me it is
+  ```
+  <Directory "/Users/akshayrajgollahalli/Sites/">
+      Options Indexes MultiViews
+      AllowOverride None
+      Order allow,deny
+      Allow from all
+  </Directory>
+  ```
+5. Then key in <kbd>Control</kdb>+<kbd>X</kdb>, then <kbd>Y</kdb> and then <kbd>Return</kdb>.
+6. To confirm if its saved or not, type `cat YourUserName.conf`, this should print out what you have saved it that file.
+7. Now lets change the file permission so than the Apache can read it. Type in `sudo chmod 644 YourUserName.conf`
+8. restart the Apache server by typing `sudo apachectl restart`
+
+Now open the browser and type in `http://localhost/~akshayrajgollahalli`
+
+**For Mac OSX 10.10 Yosemite and above**
+#### 1.2.3 Instilling PHP
