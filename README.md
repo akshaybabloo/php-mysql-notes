@@ -34,7 +34,7 @@ There are four commands I want us to look into:
 
 To know the version of the Apache server, type in `httpd -v` this should print out the version of yours computers Apache version. Mine printed out like this:
 
-```sh
+```
 Server version: Apache/2.4.16 (Unix)
 Server built:   Jul 31 2015 15:53:26
 ```
