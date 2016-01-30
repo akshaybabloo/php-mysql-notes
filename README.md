@@ -102,7 +102,7 @@ Now, we should tell the Apache to server the files from the `Sites` folder rathe
       Allow from all
   </Directory>
   ```
-5. Then key in <kbd>Control</kdb>+<kbd>X</kdb>, then <kbd>Y</kdb> and then <kbd>Return</kdb>.
+5. Then key in <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
 6. To confirm if its saved or not, type `cat YourUserName.conf`, this should print out what you have saved it that file.
 7. Now lets change the file permission so than the Apache can read it. Type in `sudo chmod 644 YourUserName.conf`
 8. restart the Apache server by typing `sudo apachectl restart`
