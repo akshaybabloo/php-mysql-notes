@@ -120,7 +120,46 @@ Now open the browser and type in `http://localhost/~akshayrajgollahalli`
 
 **For Mac OSX 10.10 Yosemite and above**
 
-There seems to be a problem with OSX 10.10 and above. For this, I will be following a different approach called virtual hosting, this will work for all types of Mac OS X. It is like creating a `*.com` but for your local Apache server.
+There seems to be a problem with OSX 10.10 and above as they have changed the configuration file. Do the following:
+
+1. Open `Terminal`
+2. Type in `sudo nano /etc/apache2/httpd.conf`
+3. Hit <kbd>control</kbd>+<kbd>W</kbd> to search for `userdir`. This should take you here -> `LoadModule userdir_module libexec/apache2/mod_userdir.so`. Remove the `#` sign from the starting of the line to uncomment it.
+4. Hit <kbd>control</kbd>+<kbd>W</kbd> to search for `httpd-userdir`. This should take you here -> `Include /private/etc/apache2/extra/httpd-userdir.conf`. Remove the `#` sign from the starting of the line to uncomment it.
+5. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+6. Next, enter `sudo nano /etc/apache2/extra/httpd-userdir.conf` and uncomment `Include /private/etc/apache2/users/*.conf` line.
+7. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+8. Test the configuration made `sudo apachectl configtest`, this should reply `Syntak ok`. Then restart Apache, `sudo apache2 restart`.
+9. Then type in `sudo nano /etc/apache2/httpd.conf` and search for `authz_core` and uncomment `LoadModule authz_core_module libexec/apache2/mod_authz_core.so`. Then search for `authz_host` and uncomment `LoadModule authz_host_module libexec/apache2/mod_authz_host.so`.
+10. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+11. Go back to your user config, `sudo nano /etc/apache2/users/akshayrajgollahalli.conf`, convert
+
+  ```
+  <Directory "/Users/akshayrajgollahalli/Sites/">
+      Options Indexes MultiViews
+      AllowOverride None
+      Order allow,deny
+      Allow from all
+  </Directory>
+  ```
+
+  To
+
+  ```
+  <Directory "/Users/akshayrajgollahalli/Sites/">
+      Options Indexes MultiViews
+      AllowOverride None
+      Require all granted
+  </Directory>
+  ```
+12. Lastly, Test the configuration made `sudo apachectl configtest`, this should reply `Syntak ok`. Then restart Apache, `sudo apache2 restart`.
+13. Open the web browser and type in `http://localhost/~akshayrajgollahalli/` this should say `hello`.
+
+**OR**
+
+**Using Virtual Hosting**
+
+I will be following a different approach called virtual hosting, this will work for all types of Mac OS X. It is like creating a `*.com` but for your local Apache server.
 
 Do the following:
 
