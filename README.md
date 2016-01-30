@@ -1,4 +1,4 @@
-# php-mysql-notes
+# PHP with MySQL Tutorial
 PHP 5, PHP 5.5 and MySQL
 
 ## 1 Instillation of PHP, Apache Server, and MySQL server.
