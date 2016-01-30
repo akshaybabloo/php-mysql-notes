@@ -85,6 +85,7 @@ Now, we should tell the Apache to server the files from the `Sites` folder rathe
 2. Type in `cd /etc/apache2/users/`. Then type `ls`, this will list out files that are present. If in some case you do find any file do look into it if it matches the following text. But if you fin `Guest.conf` just ignore it, this file is for guest users.
 3. Type in `sudo nano YourUserName.conf` - create a YourUserName.conf file using nano editor - make sure you write in your user name. For me it is `sudo nano akshayrajgollahalli.conf`.
 4. This command will open an editor, type in the following
+
   ```
   <Directory "/Users/YourUserName/Sites/">
       Options Indexes MultiViews
@@ -93,7 +94,9 @@ Now, we should tell the Apache to server the files from the `Sites` folder rathe
       Allow from all
   </Directory>
   ```
+
   For me it is
+
   ```
   <Directory "/Users/akshayrajgollahalli/Sites/">
       Options Indexes MultiViews
@@ -102,6 +105,7 @@ Now, we should tell the Apache to server the files from the `Sites` folder rathe
       Allow from all
   </Directory>
   ```
+  
 5. Then key in <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
 6. To confirm if its saved or not, type `cat YourUserName.conf`, this should print out what you have saved it that file.
 7. Now lets change the file permission so than the Apache can read it. Type in `sudo chmod 644 YourUserName.conf`
