@@ -194,4 +194,6 @@ Finally, We have to connect `.local` to the `127.0.0.1` IP address. Do the follo
   ```
 3. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
 
+To check if it's working or not, open your web browser and type in the local URL just created, his should display `hello`.
+
 #### 1.2.3 Instilling PHP
