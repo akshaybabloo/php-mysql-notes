@@ -34,7 +34,7 @@ There are four commands I want us to look into:
 
 To know the version of the Apache server, type in `httpd -v` this should print out the version of yours computers Apache version. Mine printed out like this:
 
-```
+```sh
 Server version: Apache/2.4.16 (Unix)
 Server built:   Jul 31 2015 15:53:26
 ```
@@ -45,6 +45,7 @@ There are two ways to see if your Apache server is running or not (Make sure the
 
 1. Open your web browser and type `http://localhost`, this should return error.
 2. Type in `ps aux | grep httpd` - This will list all running application on your system, `grep httpd` minimize the list only where `httpd` is running. Mine showed something like This
+
   ```sh
   akshayrajgollahalli  1534   0.0  0.0  2454296    836 s000  S+    7:22pm   0:00.00 grep httpd
   ```
