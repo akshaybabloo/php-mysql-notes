@@ -105,13 +105,93 @@ Now, we should tell the Apache to server the files from the `Sites` folder rathe
       Allow from all
   </Directory>
   ```
-  
-5. Then key in <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+
+5. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
 6. To confirm if its saved or not, type `cat YourUserName.conf`, this should print out what you have saved it that file.
 7. Now lets change the file permission so than the Apache can read it. Type in `sudo chmod 644 YourUserName.conf`
 8. restart the Apache server by typing `sudo apachectl restart`
 
+Lets create a simple html file to test it
+
+1. Type in `nano /Users/YourUserName/Sites/` and type in `hello`.
+2. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+
 Now open the browser and type in `http://localhost/~akshayrajgollahalli`
 
 **For Mac OSX 10.10 Yosemite and above**
+
+There seems to be a problem with OSX 10.10 and above. For this I will be following a different approach called virtual hosting. This will work for all types of Mac OS X. It is like creating a `*.com` but for your local Apache server.
+
+Do the following:
+
+1. Open terminal
+2. Type in `sudo nano /etc/apache2/httpd.conf` and search for this line -> `#Include /private/etc/apache2/extra/httpd-vhosts.conf`.
+3. Below that type in the following `Include /private/etc/apache2/vhosts/*.conf` - Which means, include all the file in that path that starts with `.conf`.
+4. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+
+Next,
+
+1. Type in `sudo mkdir /etc/apache2/vhosts` - This will create `vhosts` folder in `/etc/apache2/`.
+2. Then go to that directory by typing `cd /etc/apache2/vhosts`.
+3. Create a file by typing `nano _default.conf`. In that type in
+
+  ```
+  <VirtualHost *:80>
+    DocumentRoot "/Library/WebServer/Documents"
+  </VirtualHost>
+  ```
+
+  Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+4. Now lets create the virtual, `nano subdomain.domain.com.conf` for me it is `nano akshay.gollahalli.com.conf`.
+5. Then type in
+
+  ```
+  <VirtualHost *:80>
+        DocumentRoot "path/to/Site"
+        ServerName subdomain.domain.local
+        ErrorLog "/private/var/log/apache2/jason.pureconcepts.local-error_log"
+        CustomLog "/private/var/log/apache2/jason.pureconcepts.local-access_log" common
+
+        <Directory "path/to/Site">
+            AllowOverride All
+            Require all granted
+        </Directory>
+  </VirtualHost>
+  ```
+
+  for me it is
+
+  ```
+  <VirtualHost *:80>
+        DocumentRoot "/Users/akshayrajgollahalli/Sites"
+        ServerName akshay.gollahalli.local
+        ErrorLog "/private/var/log/apache2/jason.pureconcepts.local-error_log"
+        CustomLog "/private/var/log/apache2/jason.pureconcepts.local-access_log" common
+
+        <Directory "/Users/akshayrajgollahalli/Sites">
+            AllowOverride All
+            Require all granted
+        </Directory>
+  </VirtualHost>
+  ```
+
+  Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+6. Restart the Apache server by typing `sudo apachectl restart`.
+
+Finally, We have to connect `.local` to the `127.0.0.1` IP address. Do the following:
+
+1. Type in `sudo nano /etc/hosts`.
+2. Type in
+
+  ```
+  127.0.0.1       subdomain.domain.local
+  ```
+
+  for me it is
+
+  ```
+  127.0.0.1       akshay.gollahalli.local
+  ```
+3. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+
 #### 1.2.3 Instilling PHP
