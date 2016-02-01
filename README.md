@@ -235,4 +235,66 @@ Finally, We have to connect `.local` to the `127.0.0.1` IP address. Do the follo
 
 To check if it's working or not, open your web browser and type in the local URL just created, his should display `hello`.
 
-#### 1.2.3 Instilling PHP
+#### 1.2.3 Install or Enable PHP
+
+There are two ways to install PHP or enable PHP. By default pre-installed with Mac OS X 10.8 and above. we can enable it and then upgrade it or we could fresh install using [HomeBrew](http://brew.sh/). I will show you both ways.
+
+**Enabling and Upgrading PHP**
+
+1. Open `Terminal`.
+2. To find out what you version is, type in `php -v` this should reply something like this (I have already upgraded my php version):
+
+  ```
+  PHP 5.6.17 (cli) (built: Jan 21 2016 15:48:02)
+  Copyright (c) 1997-2015 The PHP Group
+  Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies
+  ```
+
+3. We have to tell Apache to start serving PHP files, to do that type in `sudo nano /etc/apache2/httpd.conf`.
+4. Search for `php` by pressing <kbd>control</kbd>+<kbd>W</kbd>, and uncomment `LoadModule php5_module libexec/apache2/libphp5.so`
+5. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+
+You can test PHP by creating a new file called `PHPInfo.php` inside your `Sites` directory. Do the following:
+
+1. Open `Terminal`.
+2. Type in `nano PHPInfo.php`, and type in
+
+  ```php
+  <?php phpinfo() ?>
+  ```
+
+3. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
+4. test it by opening you web browser and typing in `http://localhost/~akshayrajgollahalli/PHPInfo.php`. This will show you the full configuration and information of the PHP installed on your computer.
+
+**Upgrading PHP**
+
+1. Go to [http://nz2.php.net/manual/en/install.macosx.packages.php](http://nz2.php.net/manual/en/install.macosx.packages.php) and click on [http://php-osx.liip.ch/](http://php-osx.liip.ch/).
+2. At the time of writing this tutorial, `curl -s http://php-osx.liip.ch/install.sh | bash -s 5.6` was available. Copy that and open your `Terminal` and paste it. Hit <kbd>return</kbd>.
+
+This will automatically install PHP 5.6 for you. You can test this by refreshing your web browser.
+
+**Configuring PHP**
+
+There are three thing to configure in PHP:
+
+* Error reporting
+* Timezone
+* Output buffering
+
+All these configurations are in either `php.ini` or `php.d`, You can find the path of these files in `PHPInfo.php`. For me it shows as
+
+![Path for PHP.ini and PHP.d](https://raw.githubusercontent.com/akshaybabloo/php-mysql-notes/master/Screenshots/path_php.jpg)
+
+1. Open `Terminal`.
+2. Type in `nano /usr/local/etc/php/5.6/php.ini`
+3. Using the search function make sure the following are enabled and uncommented:
+
+  ```
+  display_errors = On
+  error_reporting = E_ALL
+  html_errors = On
+  output_buffering = 4096
+  date.timezone = "Pacific/Auckland"
+  ```
+
+  > Note 1: Make sure you know your timezone, you can check this at [http://php.net/manual/en/timezones.php](http://php.net/manual/en/timezones.php). If you don't find your City name, chose the closest one for you.
