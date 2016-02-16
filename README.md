@@ -21,6 +21,16 @@ Or let's install it manually.
 
 To open terminal, go to `Applications > Utilities > Terminal`.
 
+#### 1.2.2 Installing `HomeBrew`
+
+Do the following:
+
+1. Go to [brew.sh](http://brew.sh)
+2. Open `Terminal`.
+3. Type `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+That's it!
+
 #### 1.2.2 Instilling Apache server
 
 Mac comes pre-installed with Apache server. When OS X 10.8 was launched the open to enable this web server was removed from the `System Preference > Sharing`, but is still installed in the Unix core of it.
@@ -298,3 +308,70 @@ All these configurations are in either `php.ini` or `php.d`, You can find the pa
   ```
 
   > Note 1: Make sure you know your timezone, you can check this at [http://php.net/manual/en/timezones.php](http://php.net/manual/en/timezones.php). If you don't find your City name, chose the closest one for you.
+
+### 1.2.3 Installing MySQL
+
+There are two ways to install MySQL. You can either download the installer from [http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/) or install it through `HomeBrew`.
+
+**Installing via HomeBrew**
+
+1. Open you `Terminal`.
+2. Type `brew install mysql`. This will download all the configuration files and install MySQL server on your system.
+
+MySQL is installed at `/usr/local/bin/mysql`.
+
+There are few more option setup you would have to do which will be displayed by the installer.
+
+**Installing via MySQL Installer**
+
+1. Go to [http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/), and download 64-bit DMG package.
+2. Double click on it to open the package.
+3. You will have to install two packages.
+
+MySQL is installed at `/usr/local/bin/mysql`.
+
+Now, we have to put MySQL in your path. To do that, do the following:
+
+1. Open `Terminal`.
+2. Type `cd ~` - `~` means home directory.
+3. Then, type `ls -la` - this will list all hidden and visible folders and files. In this list see if `.bash_profile` is available or not. If available go to step 5.
+4. If you don'f find `.bash_profile`, type `touch .bash_profile`.
+5. Then, type `nano .bash_profile` - This is a UNIX editor to edit `.bash_profile`.
+6. In that, type in `export PATH="/usr/local/mysql/bin:$PATH"`.
+7. To save press <kbd>Control</kbd>+<kbd>x</kbd>, then press <kbd>y</kbd> and <kbd>return</kbd>.
+8. Refresh the changes made by typing `source .bash_profile`
+
+To start you MySQL server type `mysql.server start` (if installed with HomeBrew), if you have installed it through the package installer then type `mysql start` in the `Terminal`.
+
+**Setting up admin password**
+
+Do the following:
+
+1. Open the `Terminal`.
+2. Type `mysqladmin -u root password`. Hit <kbd>return</kbd>.
+3. Enter your new password, then hit <kbd>return</kbd>.
+4. Re-enter your new password to conform, then hit <kbd>return</kbd>.
+
+To change your password, type `mysqladmin -u root -p password`. This will ask you for your old password, then enter your new password.
+
+## 2 Starting with PHP
+
+### 2.1 Syntax of PHP
+
+There are few rules you would have to follow in order to get PHP running with out any error. They are as follows:
+
+* A PHP page must end with `FileName.php`.
+* A PHP code should be written in `<?php ----- ?>` tag. There are other short cuts such as `<? ----- ?>` and `<?= ----- ?>` (to output a result), but these are considered as bad practice. Or the other style is to do an ASP version type of tags i.e. `<% ----- %>` and `<%= ----- %>`.
+* PHP doesn't care about white space. i.e.
+
+  ```php
+  <?php phpinfo(); ?>
+  ```
+
+  is same as
+
+  ```php
+  <?php
+
+ phpinfo();         ?>
+  ```
