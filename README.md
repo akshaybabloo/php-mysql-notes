@@ -435,3 +435,13 @@ $__variable //<-- I don't recommend using this.
 ```
 
 Also I would highly recommend you to go through [http://php.net/manual/en/reserved.php](http://php.net/manual/en/reserved.php) which lists out some reserved `Keywords` that you cannot use.
+
+### 3.2 Strings and String functions
+
+See [3_2_String_StringFunction.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_2_String_StringFunction.php)
+
+A string is a set of characters written in `""`.
+
+```php
+<?php $myString = "Hello World"; // is a string ?>
+```
