@@ -92,7 +92,7 @@ You could open `Finder` window, from the menu bar `Go > Go to Folder` or use the
 Now, we should tell the Apache to serve the files from the `Sites` folder rather than the default one. To do that, do the following:
 
 1. Open the `Terminal`.
-2. Type in `cd /etc/apache2/users/`. Then type `ls`, this will list out files that are present. If in case you do find some files do look into it to check whether it matches the text below. But if you find `Guest.conf` just ignore it, this file is for guest users.
+2. Type in `cd /etc/apache2/users/`. Then type `ls`, this will list out files that are present. If you in case do find some files, do look into it to check whether it matches the text below. But if you find `Guest.conf` just ignore it, this file is for guest users.
 3. Type in `sudo nano YourUserName.conf` - create a YourUserName.conf file using nano editor - make sure you write in your username. For me, it is `sudo nano akshayrajgollahalli.conf`.
 4. This command will open an editor, type in the following
 
@@ -121,7 +121,7 @@ Now, we should tell the Apache to serve the files from the `Sites` folder rather
 7. Now let's change the file permission so that the Apache can read it. Type in `sudo chmod 644 YourUserName.conf`
 8. restart the Apache server by typing `sudo apachectl restart`
 
-Lets create a simple html file to test it
+Let's create a simple html file to test it
 
 1. Type in `nano /Users/YourUserName/Sites/` and type in `hello`.
 2. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
@@ -162,14 +162,14 @@ There seems to be a problem with OSX 10.10 and above as they have changed the co
       Require all granted
   </Directory>
   ```
-12. Lastly, Test the configuration made `sudo apachectl configtest`, this should reply `Syntak ok`. Then restart Apache, `sudo apache2 restart`.
+12. Lastly, Test the configuration made `sudo apachectl configtest`, this should reply `Syntax ok`. Then restart Apache, `sudo apache2 restart`.
 13. Open the web browser and type in `http://localhost/~akshayrajgollahalli/` this should say `hello`.
 
 **OR**
 
 **Using Virtual Hosting**
 
-I will be following a different approach called virtual hosting, this will work for all types of Mac OS X. It is like creating a `*.com` but for your local Apache server.
+I will be following a different approach called virtual hosting; this will work for all types of Mac OS X. It is like creating a `*.com` but for your local Apache server.
 
 Do the following:
 
@@ -247,7 +247,7 @@ To check if it's working or not, open your web browser and type in the local URL
 
 #### 1.2.3 Install or Enable PHP
 
-There are two ways to install PHP or enable PHP. By default pre-installed with Mac OS X 10.8 and above. we can enable it and then upgrade it or we could fresh install using [HomeBrew](http://brew.sh/). I will show you both ways.
+There are two ways to install PHP or enable PHP. By default pre-installed with Mac OS X 10.8 and above. We can enable it and then upgrade it or we could fresh install using [HomeBrew](http://brew.sh/). I will show you both ways.
 
 **Enabling and Upgrading PHP**
 
@@ -274,7 +274,7 @@ You can test PHP by creating a new file called `PHPInfo.php` inside your `Sites`
   ```
 
 3. Save the file by doing <kbd>Control</kbd>+<kbd>X</kbd>, then <kbd>Y</kbd> and then <kbd>Return</kbd>.
-4. test it by opening you web browser and typing in `http://localhost/~akshayrajgollahalli/PHPInfo.php`. This will show you the full configuration and information of the PHP installed on your computer.
+4. test it by opening you web browser and typing in `http://localhost/~akshayrajgollahalli/PHPInfo.php`, this will show you the full configuration and information of the PHP installed on your computer.
 
 **Upgrading PHP**
 
@@ -285,13 +285,13 @@ This will automatically install PHP 5.6 for you. You can test this by refreshing
 
 **Configuring PHP**
 
-There are three thing to configure in PHP:
+There are three things to configure in PHP:
 
 * Error reporting
 * Timezone
 * Output buffering
 
-All these configurations are in either `php.ini` or `php.d`, You can find the path of these files in `PHPInfo.php`. For me it shows as
+All these configurations are in either `php.ini` or `php.d`, You can find the path of these files in `PHPInfo.php`. For me, it shows as
 
 ![Path for PHP.ini and PHP.d](https://raw.githubusercontent.com/akshaybabloo/php-mysql-notes/master/Screenshots/path_php.jpg)
 
@@ -320,12 +320,12 @@ There are two ways to install MySQL. You can either download the installer from 
 
 MySQL is installed at `/usr/local/bin/mysql`.
 
-There are few more option setup you would have to do which will be displayed by the installer.
+There are few more options setup you would have to do which will be displayed by the installer.
 
 **Installing via MySQL Installer**
 
 1. Go to [http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/), and download 64-bit DMG package.
-2. Double click on it to open the package.
+2. Double-click on it to open the package.
 3. You will have to install two packages.
 
 MySQL is installed at `/usr/local/bin/mysql`.
@@ -352,17 +352,17 @@ Do the following:
 3. Enter your new password, then hit <kbd>return</kbd>.
 4. Re-enter your new password to conform, then hit <kbd>return</kbd>.
 
-To change your password, type `mysqladmin -u root -p password`. This will ask you for your old password, then enter your new password.
+To change your password, type `mysqladmin -u root -p password`, this will ask you for your old password, then enter your new password.
 
 ## 2 Basics of PHP
 
 ### 2.1 Syntax of PHP
 
-There are few rules you would have to follow in order to get PHP running with out any error. They are as follows:
+There are few rules you would have to follow to get PHP running without any error. They are as follows:
 
 * A PHP page must end with `FileName.php`.
-* A PHP code should be written in `<?php ----- ?>` tag. There are other short cuts such as `<? ----- ?>` and `<?= ----- ?>` (to output a result), but these are considered as bad practice. Or the other style is to do an ASP version type of tags i.e. `<% ----- %>` and `<%= ----- %>`.
-* PHP doesn't care about white space. i.e.
+* A PHP code should be written in `<?php ----- ?>` tag. There are other shortcuts such as `<? ----- ?>` and `<?= ----- ?>` (to output a result), but these are considered as bad practice. Or the other style is to do an ASP version type of tags i.e. `<% ----- %>` and `<%= ----- %>`.
+* PHP doesn't care about whitespace. i.e.
 
   ```php
   <?php phpinfo(); ?>
@@ -379,7 +379,7 @@ There are few rules you would have to follow in order to get PHP running with ou
 
 ### 2.2 Comments in PHP
 
-There are different ways to comment in PHP, they are as follows:
+There are different ways to comment in PHP; they are as follows:
 
 ```php
 // single line commenting
@@ -399,7 +399,7 @@ block commenting
 
 See [2_1_DynamicText](https://github.com/akshaybabloo/php-mysql-notes/blob/master/2_Basics/2_1_DynamicText.php)
 
-PHP has the ability to output dynamic text by using the key word `echo`.
+PHP can output dynamic text by using the keyword `echo`.
 
 ```php
 <?php echo "Hello World"; ?>
@@ -411,9 +411,9 @@ PHP has the ability to output dynamic text by using the key word `echo`.
 
 see [3_1_Variables.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_1_Variables.php)
 
-A variable in general programming is a symbolic representation of a value. A variable can change its value over the time.
+A variable in general programming is a symbolic representation of value. A variable can change its value over the time.
 
-There are few rules to be followed in PHP, they are as follows:
+There are few rules to be followed in PHP; they are as follows:
 
 * A variable should always start with `$`.
 * Variable can start with either `_` or a letter.
@@ -434,14 +434,16 @@ $_variable //<-- I don't recommend using this.
 $__variable //<-- I don't recommend using this.
 ```
 
-Also I would highly recommend you to go through [http://php.net/manual/en/reserved.php](http://php.net/manual/en/reserved.php) which lists out some reserved `Keywords` that you cannot use.
+Also, I would highly recommend you to go through [http://php.net/manual/en/reserved.php](http://php.net/manual/en/reserved.php) which lists out some reserved `Keywords` that you cannot use.
 
 ### 3.2 Strings and String functions
 
 See [3_2_String_StringFunction.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_2_String_StringFunction.php)
 
-A string is a set of characters written in `""`.
+The string is a set of characters written in `""`.
 
 ```php
 <?php $myString = "Hello World"; // is a string ?>
 ```
+
+A string function is used to manipulate a string.
