@@ -354,7 +354,7 @@ Do the following:
 
 To change your password, type `mysqladmin -u root -p password`. This will ask you for your old password, then enter your new password.
 
-## 2 Starting with PHP
+## 2 Basics of PHP
 
 ### 2.1 Syntax of PHP
 
@@ -375,3 +375,32 @@ There are few rules you would have to follow in order to get PHP running with ou
 
  phpinfo();         ?>
   ```
+  The important thing you should keep in mind is that a statement should end with `;`.
+
+### 2.2 Comments in PHP
+
+There are different ways to comment in PHP, they are as follows:
+
+```php
+// single line commenting
+
+/*
+block commenting
+*/
+
+# Another way to comment single lines
+
+/**
+* This can be used to generate PHP Documents.
+*/
+```
+
+## 2.3 Outputting dynamic text
+
+See [2_1_DynamicText](https://github.com/akshaybabloo/php-mysql-notes/blob/master/2_Basics/2_1_DynamicText.php)
+
+PHP has the ability to output dynamic text by using the key word `echo`.
+
+```php
+<?php echo "Hello World"; ?>
+```
