@@ -404,3 +404,34 @@ PHP has the ability to output dynamic text by using the key word `echo`.
 ```php
 <?php echo "Hello World"; ?>
 ```
+
+## 3 Data types
+
+### 3.1 Variables
+
+see [3_1_Variables.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_1_Variables.php)
+
+A variable in general programming is a symbolic representation of a value. A variable can change its value over the time.
+
+There are few rules to be followed in PHP, they are as follows:
+
+* A variable should always start with `$`.
+* Variable can start with either `_` or a letter.
+* Variable cannot contain a space.
+* A variable is case sensitive.
+* A variable can contain numbers and `-`.
+
+For example:
+
+```php
+$variable
+$Variable
+$myVariable //<-- This is what I will be using.
+$my_variable
+$my-variable //<-- I don't recommend using this.
+$variable1
+$_variable //<-- I don't recommend using this.
+$__variable //<-- I don't recommend using this.
+```
+
+Also I would highly recommend you to go through [http://php.net/manual/en/reserved.php](http://php.net/manual/en/reserved.php) which lists out some reserved `Keywords` that you cannot use.
