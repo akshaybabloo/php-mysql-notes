@@ -520,3 +520,9 @@ For more functions on array see -> [http://php.net/manual/en/ref.array.php](http
 See [3_8_Booleans.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_8_Booleans.php)
 
 Booleans are either True or False, in the case of PHP a True vale is represented as `1` False is represented as empty.
+
+### 3.9 NULL vs empty
+
+See [3_9_NULL_empty.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_9_NULL_empty.php)
+
+An `empty();` function considers - `""`, `null`, `0`, `0.0`, `"0"`, `false` and `array();` as empty and will return true. 
