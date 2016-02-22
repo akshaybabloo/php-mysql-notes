@@ -491,7 +491,6 @@ echo "<pre>";
 print_r($newArray);
 echo "</pre>";
 
-
 // which will print:
 //Array
 //(
@@ -503,3 +502,9 @@ echo "</pre>";
 ```
 
 From version 5.4 you can use `[]` to assign an array instead of using `array();` function.
+
+### 3.6 Associative Arrays
+
+See [3_6_Associative_Arrays.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_6_Associative_Arrays.php)
+
+Also know as key-value pair, `array("key" => "value")`, the key and value could be integer or string. If you want your array to be in form of unordered list then you should use Associative arrays.
