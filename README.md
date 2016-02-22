@@ -545,3 +545,9 @@ Types of data types we have seen so far:
 3. float
 4. array
 5. boolean, bool
+
+### 3.11 Constants
+
+See [3_11_Constants.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_11_Constants.php)
+
+A constant cannot change its value. In PHP the only way you can set a constant it by using function `define();`.
