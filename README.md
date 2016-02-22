@@ -460,3 +460,20 @@ You should know that `1` and `"1"` are different from each other. PHP will try i
   echo 1 + "1 number"; // removes anything after 1 and converts it into integer
  ?>
 ```
+
+### 3.4 Floats
+
+See [3_4_Floats.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_4_Floats.php)
+
+There are three function where you might want to consider:
+
+```php
+<?php
+  $int = 10;
+  $float = 10.67
+
+  echo is_int($int); // will return 1 if true else nothing
+  echo is_float($float);
+  echo is_numeric($int); // checks if its a number
+?>
+```
