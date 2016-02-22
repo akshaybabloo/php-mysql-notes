@@ -477,3 +477,28 @@ There are three function where you might want to consider:
   echo is_numeric($int); // checks if its a number
 ?>
 ```
+
+### 3.5 Arrays
+
+See [3_5_Arrays.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_5_Arrays.php)
+
+An array's index alway starts with `0`. You can print the structure of an array by using `print_r();` function. For example
+
+```php
+<?php
+$newArray = array(1, 2, 3);
+echo "<pre>";
+print_r($newArray);
+echo "</pre>";
+?>
+
+// which will print:
+//Array
+//(
+//    [0] => 1
+//    [1] => 2
+//    [2] => 3
+//)
+```
+
+From version 5.4 you can use `[]` to assign an array instead of using `array();` function.
