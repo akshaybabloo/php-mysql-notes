@@ -490,7 +490,7 @@ $newArray = array(1, 2, 3);
 echo "<pre>";
 print_r($newArray);
 echo "</pre>";
-?>
+
 
 // which will print:
 //Array
@@ -499,6 +499,7 @@ echo "</pre>";
 //    [1] => 2
 //    [2] => 3
 //)
+?>
 ```
 
 From version 5.4 you can use `[]` to assign an array instead of using `array();` function.
