@@ -447,3 +447,16 @@ The string is a set of characters written in `""`.
 ```
 
 A string function is used to manipulate a string.
+
+### 3.3 Integers
+
+See [3_3_Integers.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_3_Integers.php)
+
+You should know that `1` and `"1"` are different from each other. PHP will try it's best to convert `"1"` into an integer. For example:
+
+```php
+<?php
+  echo 1 + "1";
+  echo 1 + "1 number"; // removes anything after 1 and converts it into integer
+ ?>
+```
