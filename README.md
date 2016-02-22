@@ -525,4 +525,23 @@ Booleans are either True or False, in the case of PHP a True vale is represented
 
 See [3_9_NULL_empty.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_9_NULL_empty.php)
 
-An `empty();` function considers - `""`, `null`, `0`, `0.0`, `"0"`, `false` and `array();` as empty and will return true. 
+An `empty();` function considers - `""`, `null`, `0`, `0.0`, `"0"`, `false` and `array();` as empty and will return true.
+
+### 3.10 Type Juggling and Casting
+
+See [3_10_Juggling_Casting.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_10_Juggling_Casting.php)
+
+When PHP tries to convert one data type to another it's called Juggling. If the user tries to convert a data type to another then its called Casting.
+
+Type casting can be done in two way:
+
+1. Using the function - `settype($var, "integer")` - Changes in place
+2. Direct casting - `(integer) $var` - Must be assigned to a variable.
+
+Types of data types we have seen so far:
+
+1. string
+2. int, integer
+3. float
+4. array
+5. boolean, bool
