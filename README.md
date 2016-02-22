@@ -514,3 +514,9 @@ Also know as key-value pair, `array("key" => "value")`, the key and value could 
 See [3_7_Array_Functions.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_7_Array_Functions.php)
 
 For more functions on array see -> [http://php.net/manual/en/ref.array.php](http://php.net/manual/en/ref.array.php)
+
+### 3.8 Booleans
+
+See [3_8_Booleans.php](https://github.com/akshaybabloo/php-mysql-notes/blob/master/3_DataTypes/3_8_Booleans.php)
+
+Booleans are either True or False, in the case of PHP a True vale is represented as `1` False is represented as empty.
