@@ -1,6 +1,42 @@
 # PHP with MySQL Tutorial
 PHP 5, PHP 5.5 and MySQL
 
+**Table of Contents**
+
+<!-- MDTOC maxdepth:6 firsth1:2 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+- [1 Instillation of PHP, Apache Server, and MySQL server.](#1-instillation-of-php-apache-server-and-mysql-server)   
+   - [1.1 Using the stacks](#11-using-the-stacks)   
+   - [1.2 Mac OS X (Manual Instillation)](#12-mac-os-x-manual-instillation)   
+      - [1.2.1 Terminal](#121-terminal)   
+      - [1.2.2 Installing `HomeBrew`](#122-installing-homebrew)   
+      - [1.2.2 Instilling Apache server](#122-instilling-apache-server)   
+      - [1.2.3 Install or Enable PHP](#123-install-or-enable-php)   
+   - [1.2.3 Installing MySQL](#123-installing-mysql)   
+- [2 Basics of PHP](#2-basics-of-php)   
+   - [2.1 Syntax of PHP](#21-syntax-of-php)   
+- [2.3 Outputting dynamic text](#23-outputting-dynamic-text)   
+- [3 Data types](#3-data-types)   
+   - [3.1 Variables](#31-variables)   
+   - [3.2 Strings and String functions](#32-strings-and-string-functions)   
+   - [3.3 Integers](#33-integers)   
+   - [3.4 Floats](#34-floats)   
+   - [3.5 Arrays](#35-arrays)   
+   - [3.6 Associative Arrays](#36-associative-arrays)   
+   - [3.7 Array Functions](#37-array-functions)   
+   - [3.8 Booleans](#38-booleans)   
+   - [3.9 NULL vs empty](#39-null-vs-empty)   
+   - [3.10 Type Juggling and Casting](#310-type-juggling-and-casting)   
+   - [3.11 Constants](#311-constants)   
+
+<!-- /MDTOC -->
+
+**License**
+
+The code is provided under [MIT License](https://github.com/akshaybabloo/JavaScript-Tutorial/blob/master/LICENSE) and the tutorial is provided under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+![CC](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
+
 ## 1 Instillation of PHP, Apache Server, and MySQL server.
 
 In this step, I will be showing you how to install the three essential components to run a PHP script.
